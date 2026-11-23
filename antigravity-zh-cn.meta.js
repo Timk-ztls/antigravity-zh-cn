@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google Antigravity 网页版汉化包
 // @namespace    https://antigravity.google.com/
-// @version      1.2.1
+// @version      1.2.2
 // @description  Google Antigravity 网页版 (含跨域主界面 iframe) 简体中文汉化，内置防误伤护栏（不翻译对话正文、代码块、终端与文件路径），支持一键中英切换、Alt+Shift+C 跨框架未汉化词条采集与 GitHub 自动更新。
 // @author       Timk-ztls
 // @license      MIT
