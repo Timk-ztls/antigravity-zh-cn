@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google Antigravity 网页版汉化包
 // @namespace    https://antigravity.google.com/
-// @version      1.1.1
+// @version      1.2.0
 // @description  Google Antigravity 网页版 (含跨域主界面 iframe) 简体中文汉化，内置防误伤护栏（不翻译对话正文、代码块、终端与文件路径），支持一键中英切换、Alt+Shift+C 跨框架未汉化词条采集与 GitHub 自动更新。
 // @author       Timk-ztls
 // @license      MIT
@@ -1432,7 +1432,123 @@
     'Persist a correction or setup for future tasks': '将本次纠错或复杂配置沉淀为长期记忆规则',
     'Deep thinking, planning, and rigorous verification': '开启深度思考、多视角规划与严格验证模式',
     'Change how the agy-powerline statusline looks, with its theme, preset, layout, cap style and gradient commands, or save and load its config. Use when the user asks to change, restyle, simplify or share their agy-powerline bar.': '自定义 agy-powerline 状态栏外观（主题、预设、布局、渐变等）及保存/加载配置。',
-    'Install or update the agy-powerline statusline and wire it into agy\'s settings. Use when the user asks to set up, install, update, fix or check agy-powerline.': '安装、更新、检查或修复 agy-powerline 状态栏并写入 agy 配置。'
+    'Install or update the agy-powerline statusline and wire it into agy\'s settings. Use when the user asks to set up, install, update, fix or check agy-powerline.': '安装、更新、检查或修复 agy-powerline 状态栏并写入 agy 配置。',
+
+    // ==================== v1.2.0 补充：斜杠命令与技能说明、界面布局、模型配额与快捷键设置 ====================
+    'Run until the specified goal is completely finished.': '持续运行，直到指定目标彻底完成。',
+    'Plan carefully before executing a task.': '在执行任务前先进行周密规划。',
+    'Interview me to align on a plan.': '通过交互式追问与你对齐方案。',
+    'Invoke a team of agents to autonomously tackle large projects.': '调用多智能体团队自主协作攻克大型项目。',
+    'Compact the conversation now (summarize history to free up the context window).': '立即压缩当前对话（总结历史记录以释放上下文窗口）。',
+    'Run an instruction on a recurring schedule or as a one-time timer.': '按循环计划或一次性定时提醒执行指令。',
+    'Invoke a browser agent for web tasks.': '调用浏览器智能体处理网页任务。',
+    'Invoke a browser with computer-use tools only with experimental model.': '调用仅使用实验性计算机操作工具的浏览器智能体。',
+    'Reflect on recent successes or corrections to capture reusable skills or rules.': '总结近期的成功经验或纠错记录，沉淀为可复用的技能或规则。',
+    'Invoke the Boost multi-agent orchestrator for complex tasks.': '调用 Boost 多智能体编排器处理复杂任务。',
+    'Invoke the deep agent to plan, build, verify complex coding tasks.': '调用深度智能体对复杂编程任务进行规划、构建与严格验证。',
+    'Invoke the review agent to audit code changes, surface bugs, and verify correctness.': '调用审查智能体审计代码变更、排查缺陷并验证正确性。',
+    'Preview the multi-agent teamwork workflow.': '预览多智能体团队协作工作流。',
+    'Inspects the repository or pinned project files and Drive resources, installs dependencies and tools in the cloud environment, verifies builds or tests, and saves a repeatable setup script or project skill.': '检查仓库、固定项目文件与云端硬盘资源，在云端环境安装依赖和工具、验证构建或测试，并保存可复用的初始化脚本或项目技能。',
+    'Browse, search, and manage Google Drive files and folders. Use when the user shares a drive.google.com URL, asks what is in a folder, wants a file found, downloaded, uploaded, updated in place, moved, copied, or renamed, wants a Google file exported to PDF, Markdown, or CSV, wants comments read or added, wants sharing and permissions checked or changed, or wants Drive activity watched. Don\'t use for editing the contents of a Doc, Sheet, or Slides deck.': '浏览、搜索和管理 Google 云端硬盘文件与文件夹（查找、下载、上传、移动、导出为 PDF/Markdown/CSV、查看或修改共享权限与评论等）。',
+    'How to render rich interactive HTML widgets inline in the chat or as standalone artifacts. Use this skill when you want to show the user diagrams, data visualizations, interactive controls, educational walkthroughs, or any rich visual content beyond plain text and markdown.': '在对话中内嵌或以独立产物形式渲染富交互 HTML 小组件（图表、数据可视化、交互控件与教学演示等）。',
+    'Automatically migrate legacy workflows to modern skills across global and workspace configurations. Scans for existing workflows, creates target SKILL.md files, and safely archives old workflow files.': '自动将全局与工作区配置中的旧版工作流迁移为新版技能（SKILL.md），并安全归档旧工作流文件。',
+    'Build or restyle web apps, websites, landing pages, and UI. Use for HTML/CSS/JS, Next.js/Vite/React scaffolding, or improving a page\'s design, styling, or layout.': '构建或美化 Web 应用、网站、落地页与界面（HTML/CSS/JS、Next.js/Vite/React 脚手架或样式布局优化）。',
+    'Interactive guide to design and create a scheduled background automation. Use this skill when the user wants to create an automated or recurring scheduled task (e.g. "summarize my emails every morning", "every Monday send me a to-do list"). Also triggered by the /automation slash command.': '交互式引导设计并创建后台定时自动化任务（也可通过 /automation 触发）。',
+    'Build, package, and debug MCP Apps for Antigravity: MCP server tools whose results render as interactive UI in the conversation, in the side pane, or full-page from the sidebar. Use when adding a UI to an MCP tool, building or theming the app itself, packaging it as a plugin, or debugging an app that doesn\'t render or behave as expected.': '为 Antigravity 构建、打包与调试带交互界面的 MCP 应用（支持对话内嵌、侧边面板或全页渲染）。',
+    'Migrates the user\'s MCP servers, skills, slash commands, subagents, and instruction files from other coding agents (Claude Code, Codex, Cursor, Gemini CLI) into one new Antigravity plugin. Use when the user wants to bring over, import, or migrate their setup or config from another agent or tool. Don\'t use for installing Marketplace plugins or authoring a new plugin from scratch (use the plugin skill).': '将其他编程智能体（Claude Code、Codex、Cursor、Gemini CLI）中的 MCP 服务器、技能、斜杠命令与指令配置一键迁移为 Antigravity 插件。',
+    '(Preview & Quota Heavy) Run a swarm: several agents working in parallel on one task, each in its own conversation, collaborating through a shared message board. Use when the work splits into pieces that can be done at the same time, or when a second pair of eyes should check the first pair\'s work.': '（预览版 · 配额消耗较高）启动多智能体蜂群并行协作，通过共享消息板拆分任务或交叉复核。',
+    'Guidelines for interacting with GitHub and request permissions from the user when commands fail due to restrictions in the agent environment.': 'GitHub 交互指南，并在命令受环境权限限制时向用户请求授权。',
+    'How to manage and create plugins — namespaced bundles of skills, agents, rules, MCP servers and hooks that install, enable and disable as a single unit. Use this skill when the user wants to enable, disable, install or uninstall a plugin, when they want to create a new plugin, or when a new customization should be packaged into a plugin rather than left loose. Also triggered by the /plugin slash command. Don\'t use for the underlying customization system itself — discovery roots, loading priority, or authoring a standalone skill, agent, rule, hook or MCP server outside a plugin; see the customizations guide skill for those.': '管理与创建插件（打包技能、智能体、规则、MCP 与钩子，支持一键启用/停用与安装，也可通过 /plugin 触发）。',
+    'How to write and run a dynamic workflow script with the `run_workflow` tool: a Python script that orchestrates many agents with `agent`, `parallel`, `pipeline`, and `phase`. Use when a task splits into many independent or staged pieces of agent work (fan out over files, modules, bugs, or review angles, then aggregate), or when the user asks for a workflow. Don\'t use for a single delegated task (use a subagent) or for legacy workflow files (see migrate-workflows).': '使用 run_workflow 工具编写和运行动态 Python 多智能体编排工作流脚本（支持并行与分阶段流水线）。',
+    'Comprehensive guide and reference for the Antigravity Customization System. Use to explain how customizations work, their loading priority, discovery mechanisms, and to guide the creation of skills, rules, plugins, hooks, and MCP servers.': 'Antigravity 自定义扩展系统完整指南与参考（说明加载优先级与发现机制，指导创建技能、规则、插件、钩子与 MCP）。',
+    'Provides a comprehensive guide, quick reference, and sitemap for Google Antigravity (AGY), including the Antigravity CLI (agy), Antigravity 2.0, Antigravity IDE, Python SDK, slash commands, keybindings, and customizations (skills, rules, MCP, sidecars). Activate this skill when the user asks questions about how to use, configure, or customize Antigravity, AGY, the agy CLI, the Antigravity IDE, or Antigravity 2.0.': 'Google Antigravity (AGY) 综合使用指南与速查（涵盖 CLI、Antigravity 2.0、IDE、Python SDK、斜杠命令、快捷键与自定义扩展）。',
+    'Reverse engineer native, managed, Electron/JavaScript, packaged, firmware, and browser targets with REA, and build agent environments (AgentEnv bundles) of web applications from a live instance or a capture. Use shipped-artifact or requested runtime evidence to explain features, compare versions, decompile code, or guide a reconstruction. Skip REA for ordinary source-repository architecture analysis.': '使用 REA 对原生、托管、Electron/JS、固件与浏览器目标进行逆向分析，或基于线上实例与抓包构建 AgentEnv 环境。',
+    'Enter a side question after /btw': '请在 /btw 后输入支线问题',
+    'Send a message in the main conversation first to start a side question': '请先在主对话中发送一条消息，再发起支线提问',
+    'Knowledge Work': '知识工作',
+    'Simplified interface for research, writing, and everyday tasks.': '精简界面，适合研究、写作与日常办公任务。',
+    'Software Engineering': '软件工程',
+    'Full interface for coding, developer tools, and managing agents.': '完整界面，提供编程、开发者工具与智能体管理功能。',
+    'Project 4K': '精简模式 (Project 4K)',
+    'Project 4K interface without developer tooling.': '不含开发者工具的精简工作界面。',
+    'The full developer experience.': '完整的开发者体验界面。',
+    'You are subscribed to the best Google AI plan.': '你已订阅最高级别的 Google AI 方案。',
+    'Gemini Models': 'Gemini 系列模型',
+    'Claude and GPT models': 'Claude 与 GPT 系列模型',
+    'Weekly Limit Remaining': '每周剩余配额',
+    'Five Hour Limit Remaining': '5 小时剩余配额',
+    'Within each group, models share a weekly limit and a 5-hour limit. Quota is consumed proportionally to the cost of the tokens. Thus, limits will last longer with shorter tasks or using more cost-effective models. The 5-hour limit smooths out aggregate demand to fairly distribute global capacity across all users, while your weekly limit is tied directly to your individual tier.': '每组内的模型共享同一每周限额与 5 小时限额，配额按 Token 消耗成本按比例扣除；因此执行较短任务或选用更高性价比的模型时配额会更耐用。5 小时限额用于平滑全局需求、公平分配算力，每周限额则直接对应你的订阅等级。',
+    'For Antigravity Business consumption options, see': '有关 Antigravity Business 计费与用量选项，请参阅',
+    'Upgrade': '升级',
+    'Remote Conversations': '远程对话',
+    'Google does not control the availability or functionality of third party developer tools. Your data from third party developer tools connected to your Antigravity instance may be shared with Google. Google will protect any such data in accordance with the Google Privacy Policy, found here:': 'Google 无法控制第三方开发者工具的可用性或功能。连接到 Antigravity 的第三方工具数据可能会共享给 Google，Google 将按照以下 Google 隐私权政策予以保护：',
+    'Navigation': '导航',
+    'Layout Controls': '布局控制',
+    'Managed by application menu': '由应用菜单管理',
+    'managed by application menu': '由应用菜单管理',
+    'reserved for sidebar switching': '保留用于侧边栏切换',
+    'Middle Click': '鼠标中键点击',
+    'Accept Step': '接受步骤',
+    'Reject Step': '拒绝步骤',
+    'Toggle Model Selector': '切换模型选择器',
+    'Start Voice Recording': '开始语音录制',
+    'Stop Voice Recording': '停止语音录制',
+    'Toggle Voice Recording': '开启/停止语音录制',
+    'Mute Voice Mic': '静音语音麦克风',
+    'Mute Voice Speaker': '静音语音播报',
+    'Toggle Terminal': '切换终端面板',
+    'Toggle Word Wrap': '切换自动换行',
+    'Toggle Project Selector': '切换项目选择器',
+    'Toggle Environment Selector': '切换运行环境选择器',
+    'Toggle Maximize Side Panel': '最大化/还原侧边辅助面板',
+    'New Window': '新建窗口',
+    'Split Conversation Vertically': '垂直拆分对话',
+    'Split Conversation Horizontally': '水平拆分对话',
+    'Equalize Split Panes': '均分拆分面板',
+    'New Terminal Tab': '新建终端标签页',
+    'Reopen Closed Tab': '重新打开已关闭的标签页',
+    'File Picker': '文件选择器',
+    'Open Command Palette': '打开命令面板',
+    'Open Conversation Picker': '打开对话选择器',
+    'Open Workspace Selector': '打开工作区选择器',
+    'Open in Cider': '在 Cider 中打开',
+    'Quote Selection': '引用选中内容',
+    'Side Question Selection': '就选中内容发起支线提问',
+    'Open in Code Search': '在代码搜索中打开',
+    'Comment on Selection': '对选中内容添加批注',
+    'Focus Input': '聚焦到输入框',
+    'Find in Pane': '在当前面板中查找',
+    'Select Next Conversation': '选择下一个对话',
+    'Select Previous Conversation': '选择上一个对话',
+    'Move Conversation Up': '上移对话',
+    'Move Conversation Down': '下移对话',
+    'Terminal: Add to Chat': '终端：添加到对话',
+    'Refresh gcert Credentials': '刷新 gcert 凭据',
+    'Copy Conversation Markdown': '复制对话 Markdown',
+    'Archive This Conversation': '归档此对话',
+    'Pin This Conversation': '置顶此对话',
+    'Unpin This Conversation': '取消置顶此对话',
+    'Find in Conversation': '在对话中查找',
+    'Jump to Previous Prompt': '跳转到上一条提问',
+    'Jump to Next Prompt': '跳转到下一条提问',
+    'Mark This Conversation as Read': '将此对话标为已读',
+    'Mark This Conversation as Unread': '将此对话标为未读',
+    'Rename This Conversation': '重命名此对话',
+    'Move to New Group': '移动到新分组',
+    'Open Trajectory Debug View': '打开轨迹调试视图',
+    'Copy Conversation ID': '复制对话 ID',
+    'Copy Trajectory ID': '复制轨迹 ID',
+    'Download Diagnostics': '下载诊断日志',
+    'Toggle Between Light/Dark Themes': '切换浅色 / 深色主题',
+    'Connect to SSH Host…': '连接到 SSH 主机…',
+    'Stop SSH Server…': '停止 SSH 服务…',
+    'Switch to This Computer': '切换到本机',
+    'Previous Side Panel Tab': '上一个侧边面板标签页',
+    'Next Side Panel Tab': '下一个侧边面板标签页',
+    'Collapse All Folders': '折叠所有文件夹',
+    'Expand All Folders': '展开所有文件夹',
+    'Cancel Generation': '取消生成',
+    'Submit Prompt (Alternate to Enter)': '发送消息（Enter 备选快捷键）'
   };
 
   function translateDuration(dur) {
@@ -1442,6 +1558,7 @@
       .replace(/(\d+)\s*h(?:ours?|rs?)?\b/gi, '$1 小时')
       .replace(/(\d+)\s*m(?:ins?|inutes?)?\b/gi, '$1 分钟')
       .replace(/(\d+)\s*s(?:ecs?|econds?)?\b/gi, '$1 秒')
+      .replace(/,\s*/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
   }
@@ -1544,7 +1661,25 @@
     [/^Handler #(\d+)$/, (_, n) => `处理器 #${n}`],
     [/^Select all in (.+)$/, (_, s) => `全选 ${s} 中的项`],
     [/^Modified in (.+)$/, (_, s) => `修改于 ${s}`],
-    [/^Switch to (.+)$/, (_, s) => `切换到 ${s}`]
+    [/^Switch to (.+)$/, (_, s) => `切换到 ${s}`],
+
+    // v1.2.0 权限预设、模型配额倒计时与快捷键冲突/提示规则
+    [/^Agent permissions preset selector, current:\s*(.+)$/, (_, p) => `智能体权限预设，当前：${translateInlineValue(p)}`],
+    [/^Models within this group:\s*(.+)$/, (_, m) => `本组包含模型：${m}`],
+    [/^You have used some of your weekly limit, it will fully refresh in (.+?)\.?$/, (_, d) => `你已使用部分每周配额，将在 ${translateDuration(d)} 后完全刷新。`],
+    [/^You have used some of your 5-hour limit, it will fully refresh in (.+?)\.?$/, (_, d) => `你已使用部分 5 小时配额，将在 ${translateDuration(d)} 后完全刷新。`],
+    [/^You have reached your weekly limit, it will (?:fully )?refresh in (.+?)\.?$/, (_, d) => `你已用完每周配额，将在 ${translateDuration(d)} 后刷新。`],
+    [/^You have reached your 5-hour limit, it will (?:fully )?refresh in (.+?)\.?$/, (_, d) => `你已用完 5 小时配额，将在 ${translateDuration(d)} 后刷新。`],
+    [/^When toggled on, (.+?) will use your AI credits to fulfill model requests once you're out of model quota\. \1 will always use your model quota first before using AI credits\.$/, (_, app) => `开启后，当模型配额用尽时，${app} 将使用你的 AI 额度继续响应请求。系统始终优先消耗模型配额，再使用 AI 额度。`],
+    [/^Select Sidebar Item (\d+)$/, (_, n) => `选择侧边栏第 ${n} 项`],
+    [/^Conflict: also assigned to (.+)$/, (_, labels) => `冲突：同时已分配给 ${labels}`],
+    [/^Conflicts with "(.+)" \(press Enter to replace\)$/, (_, labels) => `与 "${labels}" 冲突（按 Enter 替换）`],
+    [/^Conflicts with "(.+)" \((.+)\)$/, (_, labels, reason) => `与 "${labels}" 冲突（${translateInlineValue(reason)}）`],
+    [/^Conflicts with "(.+)"$/, (_, labels) => `与 "${labels}" 冲突`],
+    [/^Shortcut (.+) for (.+)$/, (_, k, label) => `${translateInlineValue(label)} 的快捷键 ${k}`],
+    [/^Remove shortcut (.+) for (.+)$/, (_, k, label) => `移除 ${translateInlineValue(label)} 的快捷键 ${k}`],
+    [/^Add shortcut for (.+)$/, (_, label) => `为 ${translateInlineValue(label)} 添加快捷键`],
+    [/^Reset (.+) to default$/, (_, label) => `将 ${translateInlineValue(label)} 恢复默认`]
   ];
 
   // ==================== 翻译引擎核心 ====================
@@ -1560,7 +1695,7 @@
     const match = raw.match(/^(\s*)([\s\S]*?)(\s*)$/);
     if (!match) return null;
     const [, lead, core, tail] = match;
-    if (!core || core.length > 600) return null;
+    if (!core || core.length > 800) return null;
     if (!/[A-Za-z]/.test(core)) return null;
 
     const normalized = core.replace(/\r\n/g, '\n');
