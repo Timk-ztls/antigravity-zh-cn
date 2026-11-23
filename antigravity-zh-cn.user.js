@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google Antigravity 网页版汉化包
 // @namespace    https://antigravity.google.com/
-// @version      1.2.0
+// @version      1.2.1
 // @description  Google Antigravity 网页版 (含跨域主界面 iframe) 简体中文汉化，内置防误伤护栏（不翻译对话正文、代码块、终端与文件路径），支持一键中英切换、Alt+Shift+C 跨框架未汉化词条采集与 GitHub 自动更新。
 // @author       Timk-ztls
 // @license      MIT
@@ -1548,7 +1548,18 @@
     'Collapse All Folders': '折叠所有文件夹',
     'Expand All Folders': '展开所有文件夹',
     'Cancel Generation': '取消生成',
-    'Submit Prompt (Alternate to Enter)': '发送消息（Enter 备选快捷键）'
+    'Submit Prompt (Alternate to Enter)': '发送消息（Enter 备选快捷键）',
+
+    // ==================== v1.2.1 补充：mcp:rea:* MCP 提示词与环境选择器标签 ====================
+    'Trace a feature through relevant artifact, symbol, and function evidence while distinguishing observations, inferences, and residual unknowns.': '结合产物、符号与函数证据追踪目标功能，并区分直接观测、推断与残留未知项。',
+    'Compare two shipped application artifacts through complete inventory and optional static or runtime evidence without equating missing data with unchanged behavior.': '基于完整清点及可选静态/运行时证据对比两个已发布版本，不将缺失数据等同于行为未变。',
+    'Evaluate a finite reconstruction specification against retained Evidence comparisons without broadening pass results into global equivalence claims.': '依据留存的证据对比评估限定范围的重构规格，不将局部通过结果泛化为全局等价。',
+    'Correlate a crash symptom with static call and reference evidence plus optional process capture observations.': '结合静态调用链、引用证据及可选进程抓包观测，关联分析崩溃现象。',
+    'Review current residual-unknown heads against retained evidence, revision integrity, and declared authority without silently closing unanswered questions.': '对照留存证据、版本完整性与声明权限审查当前残留未知项，不静默关闭未决问题。',
+    'Choose a command, inputs, observations, and stopping conditions for a process capture that answers the behavioral question.': '为解答特定行为问题设计有界进程捕获方案（指定命令、输入、观测项与停止条件）。',
+    'Local Checkout': '本地检出',
+    'New Fig Workspace': '新建 Fig 工作区',
+    'Unknown Environment': '未知环境'
   };
 
   function translateDuration(dur) {
@@ -1679,7 +1690,8 @@
     [/^Shortcut (.+) for (.+)$/, (_, k, label) => `${translateInlineValue(label)} 的快捷键 ${k}`],
     [/^Remove shortcut (.+) for (.+)$/, (_, k, label) => `移除 ${translateInlineValue(label)} 的快捷键 ${k}`],
     [/^Add shortcut for (.+)$/, (_, label) => `为 ${translateInlineValue(label)} 添加快捷键`],
-    [/^Reset (.+) to default$/, (_, label) => `将 ${translateInlineValue(label)} 恢复默认`]
+    [/^Reset (.+) to default$/, (_, label) => `将 ${translateInlineValue(label)} 恢复默认`],
+    [/^Work locally on (.+)$/, (_, targets) => `在本地操作 ${targets}`]
   ];
 
   // ==================== 翻译引擎核心 ====================
